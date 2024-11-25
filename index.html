@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A funky and colorful podcast website">
+    <meta name="author" content="Your Name">
+    <title>FunkyPod</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        :root {
+            --beige: #EAD2AC;
+            --pink: #DF928E;
+            --brown: #C58882;
+            --blue-gray: #D1DEDE;
+            --navy: #1D20F;
+        }
+
+        body {
+            font-family: 'Fredoka', 'Raleway', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--blue-gray);
+            color: var(--brown);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--pink);
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--brown);
+        }
+
+        /* Header Section */
+        header {
+            background: var(--navy);
+            color: var(--beige);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        header nav a {
+            margin: 0 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to right, var(--beige), var(--pink));
+            color: var(--navy);
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 2rem;
+            background: var(--navy);
+            color: var(--beige);
+            font-weight: bold;
+            border-radius: 30px;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--pink);
+        }
+
+/* Episodes Section */
+.episodes {
+    padding: 2rem;
+    text-align: center;
+    background: var(--beige); /* Soft pastel beige */
+    color: var(--navy);
+}
+
+.episodes h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--pink);
+}
+
+/* Grid for Episode Cards */
+.episode-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+/* Individual Episode Card Styling */
+.episode-card {
+    background: var(--light-blue);
+    border: 3px solid var(--pink);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Stacks content vertically */
+}
+
+.episode-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.episode-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--navy);
+}
+
+.episode-card p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: var(--brown);
+    max-height: none; /* Ensure no height restrictions on text */
+    overflow: visible; /* Allow text to flow freely */
+    line-height: 1.6; /* Improve readability */
+    flex-grow: 1; /* Allows the description to take up available space */
+}
+
+/* Video Player Styling */
+.episode-card video {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 1rem;
+    border: 2px solid var(--pink);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .episode-card {
+        padding: 1rem;
+    }
+    .episodes h2 {
+        font-size: 2rem;
+    }
+}
+
+
+
+
+        /* Blooper Section */
+        .bloopers {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .bloopers h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .bloopers video {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--beige);
+            text-align: center;
+            padding: 1rem;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--beige);
+        }
+       
+.gallery {
+    padding: 2rem;
+    text-align: center;
+    background: var(--pink); /* Matches the pink theme */
+    color: var(--beige);
+}
+
+.gallery h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--beige); /* Pastel beige for headings */
+}
+
+.gallery p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--beige);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 0 1rem;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 10px;
+    border: 3px solid var(--brown); /* Adds a nice border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+    </style>
+</head>
+<body>
+
+
+
+    <!-- Header -->
+    <header>
+        <h1>Real World Problems</h1>
+        <nav>
+            <a href="#episodes">Episodes</a>
+            <a href="#behindthescenes">Behind the Scenes</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Real World Problems</h2>
+        <p>With Aksha, Sam, Ruhi and Tayyiba</p>
+        <a href="#episodes" class="btn">Start Watching</a>
+    </section>
+
+    <!-- Episodes Section -->
+    <section id="episodes" class="episodes">
+        <h2>Episodes</h2>
+        <div class="episode-grid">
+            <div class="episode-card">
+                <h3>Episode 1: Our Baskets</h3>
+                <p>o	Our basket that we selected was Basket Three: Higher Education and the Right to Be Clean, which focused on KSU Cares. This basket argues and focuses on a correlation between nutritional intake, and academic performance. KSU Cares Services helps students on the campus of KSU, to improve their health which also improves their concentration in classes.  On November 15, the group decided to go to KSU. Through this, we observed KSU cares and its grocery store model as food pantry. We saw how the college students had a choice when it came to food, and it was more personalized for them. We were also given a slide show about the depths of food scarcity. This includes stigma, location of the pantry, funding for food, and a lack of staff. In the tour, we also toured the school and were shown potential solutions to minimize food scarcity.</p>
+                <video controls>
+                    <source src="vids/80CA4AD0-25FD-45D4-ABC9-691D81042183 (1).mp4" type="video/mp4">
+                    Your browser does not support video playback.
+                </video>
+            </div>
+            <div class="episode-card">
+                <h3>Episode 2: Our Overall Experience</h3>
+                <p>o	This semester’s food scarcity unit has been eye-opening for everyone. Before starting this unit, many of us didn’t fully understand all the factors that contribute to food scarcity, such as storage, location, stigma, and transportation. We learned that even something as simple as the location of a food pantry can make it inaccessible to people who need it most. Other people may avoid using these resources out of fear of being judged or because they lack transportation. This unit has helped us, as privileged students, see how food scarcity works and given us the tools to think about possible solutions. It has also deepened our understanding of the struggles many people in our community face, showing us the full scope of those experiencing food insecurity.</p>
+                <video controls>
+                    <source src="vids/ourexperiencce.MP4" type="video/mp4">
+                    Your browser does not support video playback.
+                </video>
+            </div>
+            <div class="episode-card">
+                <h3>Episode 3: Favourites and Least Favourites</h3>
+                <p>o	This semester had several highlights and challenges. One of the most enjoyable parts was the field trips and the speakers we had, which provided valuable background knowledge on food scarcity. A standout was Jackie Goldberg from KSU Cares Services, whose informative speech deepened our understanding of the topic. Additionally, we really enjoyed creating Project Profiles and the PT1 Conference slide deck, as these projects helped us improve our presentation and communication skills, which are essential for the TMP we’re currently working on. Meeting new people and collaborating with our PT1 group was another favorite aspect, as it brought creative ideas and fresh perspectives. However, not everything was easy. The annotated bibliography was one of the most challenging parts of the semester, as it required detailed work for 12 sources within a tight deadline, making the process stressful and repetitive. Finishing the IRR on time was similarly difficult, especially finding relevant peer-reviewed sources. Another frustration was the first quiz, which many found confusing, and it caused grades to drop early in the semester. Overall, while there were some tough moments, the semester was filled with meaningful learning experiences.</p>
+                <video controls>
+                    <source src="vids/FAEC979D-D115-467B-9D8E-A621E7296460.MP4" type="video/mp4">
+                    Your browser does not support video playback.
+                </video>
+            </div>
+            <div class="episode-card">
+                <h3>Episode 4: Reflection</h3>
+                <p>The only upcoming assignments we have is our final slide deck compiling all of the knowledge and evidence we have collected over the past few months, focusing on economic, social, futuristic, and historical perspectives. Looking back on the work we have done; the whole group agrees that procrastination got in the way of getting good quality work done. Regardless of the procrastination, during the PT1 conference, the team did great working together to make sure everything would run smoothly, everyone contributed enough along with understanding the information we were presenting. This class does take a lot of time and hard work, but the research and writing skills gained from that makes it worth it. </p>
+                <video controls>
+                    <source src="vids/8D96294D-4E84-4056-B97B-594108FFD615.MP4" type="video/mp4">
+                    Your browser does not support video playback.
+                </video>
+            </div>
+        </div>
+    </section>
+    
+
+  
+
+    <!-- Bloopers Section -->
+    <section id="behind-the-scenes" class="bloopers">
+        <h2>Behind the Scenes at KSU</h2>
+        <video controls>
+            <source src="vids/IMG_3129.MOV" type="video/mp4">
+            Your browser does not support video playback.
+        </video>
+        
+    </section>
+    <section id="behind-the-scenes" class="gallery">
+        <h2>Behind the Scenes</h2>
+        <p>A collection of the places we visited during this project!</p>
+        <div class="gallery-grid">
+            <img src="pics/IMG_2202.jpg" alt="The Atlanta Community Food Bank">
+            <img src="pics/IMG_2194.jpg" alt="The food warehouse at the ACFB">
+            <img src="pics/IMG_3137.jpg" alt="Produce storage at the KSU cares food pantry">
+            <img src="pics/IMG_3136.jpg" alt="The KSU Cares food pantry fridge storage">
+            <img src="pics/IMG_3134.jpg" alt="Canned goods at the KSU Cares pantry">
+        </div>
+    </section>
+    
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 RealWorldProblems. All rights reserved. <a href="#">Contact Us</a></p>
+    </footer>
+</body>
+</html>
+
+
+
+
